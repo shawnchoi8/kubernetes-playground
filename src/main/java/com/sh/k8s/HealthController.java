@@ -8,6 +8,7 @@ public class HealthController {
 
     @GetMapping("/")
     public String home() {
+        System.out.println("Hello World!"); // for debugging
         return "Hello World!";
     }
 }
