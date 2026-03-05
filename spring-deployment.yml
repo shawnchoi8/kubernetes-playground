@@ -6,7 +6,7 @@ metadata:
   name: spring-deployment # Deployment name
 
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: backend-app
