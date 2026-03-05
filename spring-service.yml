@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+
+# Service basic-info
+metadata:
+  name: spring-service
+
+spec:
+  type: NodePort # Service 의 종류
+  selector:
+    app: backend-app # Pod label
+  ports:
+    - protocol: TCP
+      nodePort: 30000
+      port: 8080
+      targetPort: 8080
