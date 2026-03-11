@@ -26,6 +26,12 @@ spec:
             - containerPort: 8080
           env:
             - name: MY_ACCOUNT
-              value: jude bellingham
+              valueFrom:
+                configMapKeyRef:
+                  name: spring-config
+                  key: my-account
             - name: MY_PASSWORD
-              value: pwd_realmadrid
+              valueFrom:
+                configMapKeyRef:
+                  name: spring-config
+                  key: my-password
