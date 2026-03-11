@@ -1,12 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 
-# Deployment 기본 정보
+# Deployment basic info
 metadata:
   name: spring-deployment # Deployment name
 
+# Deployment detail info
 spec:
-  replicas: 5
+  replicas: 3 # Number of pod replicas to create
   selector:
     matchLabels:
       app: backend-app
@@ -19,7 +20,12 @@ spec:
     spec:
       containers:
         - name: spring-container
-          image: spring-server:1.0 # image name & version
+          image: spring-server # image name & version
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
+          env:
+            - name: MY_ACCOUNT
+              value: jude bellingham
+            - name: MY_PASSWORD
+              value: pwd_realmadrid
